@@ -60,7 +60,13 @@ ieee80211n=1
 wme_enable=1
 ```
 ## 5. start the AP
+
+- kill all the process that may configure back NIC to supplicant (client mode)
+- i think this is the reason why `handle_probe_req: send failed
+` you see this message
 ```
+└─$ sudo airmon-ng check kill                                                                           
+
 └─$ sudo hostapd ./hostapd.conf                                             
 ```
 ## 6. configure DHCP , DNS (dnsmasq)
